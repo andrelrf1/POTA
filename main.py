@@ -5,10 +5,12 @@
 from aleatorio import ListasRandomicas
 from copy import deepcopy
 from sort import *
+from tabela import Tabela
 
 
 class SortMain(object):
 
+    medias = []
     bubble_sort = bubble.Start()
     selection_sort = selection.Start()
     insertion_sort = insertion.Start()
@@ -20,6 +22,8 @@ class SortMain(object):
         lista_randomica = deepcopy(lista)
         list(map(i.sort, lista_randomica))
         print("Número de iterações: %i\nMédia: %.1f" % (i.contador, i.contador / len(lista)))
+        medias.append(i.contador / len(lista))
+    Tabela(medias)
 
 
 if __name__ == "__main__":
