@@ -5,7 +5,7 @@
 from aleatorio import ListasRandomicas
 from copy import deepcopy
 from sort import *
-from tabela import Tabela
+from front.graficos import Tabela
 
 
 class SortMain(object):
@@ -23,7 +23,7 @@ class SortMain(object):
         list(map(i.sort, lista_randomica))
         print("Número de iterações: %i\nMédia: %.1f" % (i.contador, i.contador / len(lista)))
         medias.append(i.contador / len(lista))
-    Tabela(medias)
+    Tabela(media=medias)
 
 
 if __name__ == "__main__":
