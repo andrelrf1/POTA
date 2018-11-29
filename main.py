@@ -1,30 +1,43 @@
 # coding: utf-8
 
 # author: André Luiz Ramos Ferreira
-
-from aleatorio import ListasRandomicas
-from copy import deepcopy
-from sort import *
-from front.graficos import Tabela
+from controlador import SortStart
 
 
-class SortMain(object):
+class Main(object):
+    def __init__(self):
+        while True:
+            print("-" * 50)
+            print("Comparação de desempenho entre sorts".upper().center(50))
+            print("-"*50)
+            print("\n1 - Tamanho 5\n2 - Tamanho 10\n3 - Tamanho 50\n4 - Tamanho 100\n5 - Tamanho 1000 (Lento)\n"
+                  "6 - Tamanho 10000 (Inviável)\n0 - Cancelar\n")
+            escolha = int(input("Selecione o tamanho dos vetores: "))
 
-    medias = []
-    bubble_sort = bubble.Start()
-    selection_sort = selection.Start()
-    insertion_sort = insertion.Start()
-    heap_sort = heap.Start()
-    lista_de_funcoes = [bubble_sort, selection_sort, insertion_sort, heap_sort]
-    lista = ListasRandomicas()
-    lista = lista.start(50, 5)
-    for i in lista_de_funcoes:
-        lista_randomica = deepcopy(lista)
-        list(map(i.sort, lista_randomica))
-        print("Número de iterações: %i\nMédia: %.1f" % (i.contador, i.contador / len(lista)))
-        medias.append(i.contador / len(lista))
-    Tabela(media=medias)
+            if escolha == 1:
+                SortStart()
+
+            if escolha == 2:
+                SortStart(10)
+
+            if escolha == 3:
+                SortStart(50)
+
+            if escolha == 4:
+                SortStart(100)
+
+            if escolha == 5:
+                SortStart(1000)
+
+            if escolha == 6:
+                SortStart(10000)
+
+            if escolha == 0:
+                break
+
+            else:
+                continue
 
 
-if __name__ == "__main__":
-    SortMain()
+if __name__ == '__main__':
+    Main()
