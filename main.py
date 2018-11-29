@@ -11,7 +11,7 @@ class Main(object):
             print("Comparação de desempenho entre sorts".upper().center(50))
             print("-"*50)
             print("\n1 - Tamanho 5\n2 - Tamanho 10\n3 - Tamanho 50\n4 - Tamanho 100\n5 - Tamanho 1000 (Lento)\n"
-                  "6 - Tamanho 10000 (Inviável)\n0 - Cancelar\n")
+                  "6 - Tamanho 10000\n0 - Cancelar\n")
             escolha = int(input("Selecione o tamanho dos vetores: "))
 
             if escolha == 1:

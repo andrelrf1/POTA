@@ -15,6 +15,7 @@ class Start(object):
         seq = lista
 
         while seq:
+            self.contador += 1
             self.heapify(seq)
             result.append(seq.pop(0))
 

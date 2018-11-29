@@ -24,16 +24,16 @@ class SortStart(object):
                             count_sort, bucket_sort, radix_sort]
 
         if tamanho_das_listas == 10000:
-            lista_grande = open('lista.txt', 'r')
-            lista = eval(lista_grande.read())
+            medias_listas = open('medias.txt', 'r')
+            medias = eval(medias_listas.read())
+            medias_listas.close()
 
         else:
             lista = ListasRandomicas()
             lista = lista.start(50, tamanho_das_listas, permitir_repetidos)
+            for i in lista_de_funcoes:
+                lista_randomica = deepcopy(lista)
+                list(map(i.sort, lista_randomica))
+                medias.append(i.contador / len(lista))
 
-        for i in lista_de_funcoes:
-            lista_randomica = deepcopy(lista)
-            list(map(i.sort, lista_randomica))
-            print("Número de iterações: %i\nMédia: %.1f" % (i.contador, i.contador / len(lista)))
-            medias.append(i.contador / len(lista))
         Tabela(medias)
