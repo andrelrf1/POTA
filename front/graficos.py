@@ -11,6 +11,7 @@ class Tabela(object):
         largura_barra = 0.4
         legenda = ["Bubble", "Selection", "Insertion", "Heap", "Merge", "Quick", "Count", "Bucket", "Radix"]
         posicao = np.arange(len(self.__media))
+        plt.rcParams['figure.figsize'] = (11, 7)
         plt.title("Sorts")
         plt.ylabel("Média de iterações")
         plt.xticks(posicao, legenda)

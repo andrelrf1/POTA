@@ -1,18 +1,37 @@
 from kivy.app import App
-from kivy.uix.label import Label
-from kivy.uix.scrollview import ScrollView
+from kivy.uix.boxlayout import BoxLayout
+from kivy.uix.screenmanager import ScreenManager, Screen
 
 
-class Tarefas(ScrollView):
-    def __init__(self, tarefas, **kwargs):
+class Gerenciador(ScreenManager):
+    pass
+
+
+class Menu(Screen):
+    pass
+
+
+class Tarefas(Screen):
+    def __init__(self, tarefas=[], **kwargs):
         super().__init__(**kwargs)
         for tarefa in tarefas:
-            self.ids.box.add_widget(Label(text=tarefa, font_size=30, size_hint_y=None, height=200))
+            self.ids.box.add_widget(Tarefa(text=tarefa))
+
+    def addWidget(self):
+        texto = self.ids.texto.text
+        self.ids.box.add_widget(Tarefa(text=texto))
+        self.ids.texto.text = ''
+
+
+class Tarefa(BoxLayout):
+    def __init__(self, text='', **kwargs):
+        super().__init__(**kwargs)
+        self.ids.label.text = text
 
 
 class Teste(App):
     def build(self):
-        return Tarefas(["Comprar biscoito", "comprar Nescau", "Comprar Arroz", "Comprar chocolate", "Comprar bala"])
+        return Gerenciador()
 
 
 if __name__ == '__main__':

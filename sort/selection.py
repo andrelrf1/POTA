@@ -13,7 +13,6 @@ class Start(object):
 
             for j in range(i + 1, len(lista)):
                 self.contador += 1
-
                 if lista[j] < lista[valor_menor]:
                     valor_menor = j
 

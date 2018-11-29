@@ -10,12 +10,12 @@ class Start(object):
             if seq[i] > seq[parent]:
                 seq[i], seq[parent] = seq[parent], seq[i]
 
-    def sort(self, iterable):
+    def sort(self, lista=[]):
         result = []
-        seq = list(iterable)
+        seq = lista
 
         while seq:
             self.heapify(seq)
             result.append(seq.pop(0))
 
-        return result
+        return list(reversed(result))
