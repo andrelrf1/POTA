@@ -19,9 +19,9 @@ class Tabela(object):
         plt.show()
 
     def autolabel(self, rects, xpos='center'):
-        xpos = xpos.lower()  # normalize the case of the parameter
+        xpos = xpos.lower()
         ha = {'center': 'center', 'right': 'left', 'left': 'right'}
-        offset = {'center': 0.5, 'right': 0.57, 'left': 0.43}  # x_txt = x + w*off
+        offset = {'center': 0.5, 'right': 0.57, 'left': 0.43}
 
         for rect in rects:
             height = rect.get_height()

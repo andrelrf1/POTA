@@ -24,9 +24,7 @@ class SortStart(object):
                             count_sort, bucket_sort, radix_sort]
 
         if tamanho_das_listas == 10000:
-            medias_listas = open('medias.txt', 'r')
-            medias = eval(medias_listas.read())
-            medias_listas.close()
+            medias = [98150184.0, 49995000.0, 49995000.0, 50005000.0, 133616.0, 311418.0, 10000.0, 12487.0, 50050.0]
 
         else:
             lista = ListasRandomicas()
