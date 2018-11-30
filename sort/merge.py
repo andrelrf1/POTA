@@ -22,9 +22,11 @@ class Start(object):
             while i < len(lefthalf) and j < len(righthalf):
                 self.contador += 1
                 if lefthalf[i] < righthalf[j]:
+                    self.contador += 1
                     lista[k] = lefthalf[i]
                     i = i + 1
                 else:
+                    self.contador += 1
                     lista[k] = righthalf[j]
                     j = j + 1
                 k = k + 1
