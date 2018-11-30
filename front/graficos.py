@@ -8,14 +8,13 @@ class Tabela(object):
         self.gerar_tabela()
 
     def gerar_tabela(self):
-        largura_barra = 0.4
         legenda = ["Bubble", "Selection", "Insertion", "Heap", "Merge", "Quick", "Count", "Bucket", "Radix"]
         posicao = np.arange(len(self.__media))
         plt.rcParams['figure.figsize'] = (11, 7)
         plt.title("Sorts")
         plt.ylabel("Média de iterações")
         plt.xticks(posicao, legenda)
-        barra = plt.bar(range(len(self.__media)), self.__media, width=largura_barra, alpha=0.5, color="blue")
+        barra = plt.bar(range(len(self.__media)), self.__media, width=0.5, alpha=0.5, color="blue")
         self.autolabel(barra)
         plt.show()
 
